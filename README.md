@@ -1,4 +1,10 @@
 PubSearchApp
 ============
 
-This web app is to recommend the publication based on the current publication provided.
+This web app consist of two parts web app and search app. Search searches through the title of the publications.
+
+searchApp - 
+
+webApp - 
+
+
