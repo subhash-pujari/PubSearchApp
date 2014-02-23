@@ -14,7 +14,7 @@ def main():
 	db = database.DatabaseHandler()
 
 	# store comm id
-	'''
+	
 	fileR = open(dataDir+commDataset)
 	fileW = open(dataDir + commFile, "w" )
 	
@@ -30,10 +30,13 @@ def main():
 		comm = tokens[2]
 		_id = tokens[1]
 		
-		fileW.write(_id + "\t" + comm + "\n")
+		if db.getTitle(_id) is None:
+			continue
+
+		fileW.write(_id + "\t" + comm + "\t" + db.getTitle(_id)+ "\n")
 				
 	# store cit nw
-	
+	'''
 
 	# store pubCoauth
 	fileR = open(dataDir + commFile)
@@ -57,7 +60,7 @@ def main():
 		print wLine
 		fileW.write(wLine)
 	'''
-	
+	'''
 	# store citation nw
 	fileR = open(dataDir + commFile)
 	fileW = open(dataDir + citNw, "w")
@@ -78,7 +81,7 @@ def main():
 
 		if count > 10000: 
 			break
-
+	'''
 	#db.getTitle()
 	print "hello"
 
