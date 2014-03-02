@@ -1,7 +1,3 @@
-'''
-database interface
-'''
-
 import MySQLdb
 
 class DatabaseHandler:
@@ -112,32 +108,11 @@ class DatabaseHandler:
 
 		return totalSet
 
-	def getCitRef(self, lower, upper):
-	
-		sql = "select * from PublicationReferenceCitation where id >= "+ str(lower) + " and id <= "+ str(upper) + ";"
-		print sql
-		self.cursor.execute(sql)
-		data = self.cursor.fetchall()
-
-		#print data
-
-
-		citRefList = list()
-
-		for tokens in data:
-			_id = tokens[0]
-			pub = tokens[1]
-			citRef = tokens[2]
-			_type = tokens[3]
-			citRefList.append((str(pub), str(citRef)))				
-		return citRefList
-
 def main():
 	db = DatabaseHandler()
 	print db.getTitle("1712314")
 	print db.getAuthList("1712314")
 	db.getNeigh("1712314")
-	print str(len(db.getCitRef(1, 1000000)))
 
 if __name__ == "__main__":
 	main()
