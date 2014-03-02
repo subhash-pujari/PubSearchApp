@@ -1,7 +1,3 @@
-'''
-database interface
-'''
-
 import MySQLdb
 
 class DatabaseHandler:
