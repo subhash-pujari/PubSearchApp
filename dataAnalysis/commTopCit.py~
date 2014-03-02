@@ -1,7 +1,3 @@
-'''
- This script is to get the top citation publication in a community.
-'''
-
 import database
 from operator import itemgetter
 

@@ -14,7 +14,7 @@ def main():
 	db = database.DatabaseHandler()
 
 	# store comm id
-	
+	'''
 	fileR = open(dataDir+commDataset)
 	fileW = open(dataDir + commFile, "w" )
 	
@@ -36,7 +36,6 @@ def main():
 		fileW.write(_id + "\t" + comm + "\t" + db.getTitle(_id)+ "\n")
 				
 	# store cit nw
-	'''
 
 	# store pubCoauth
 	fileR = open(dataDir + commFile)
@@ -60,14 +59,16 @@ def main():
 		print wLine
 		fileW.write(wLine)
 	'''
-	'''
+	
 	# store citation nw
 	fileR = open(dataDir + commFile)
 	fileW = open(dataDir + citNw, "w")
 	count = 0
 
 	for line in fileR:
-		print line
+		#print line
+		count = count + 1
+		print "count>>" + str(count)
 		line = line.replace("\n", "")
 		
 		tokens = line.split("\t")
@@ -77,11 +78,7 @@ def main():
 
 		for neigh in neighSet:
 			fileW.write(pub + "\t" +str(neigh) + "\n")
-			count = count + 1
-
-		if count > 10000: 
-			break
-	'''
+	
 	#db.getTitle()
 	print "hello"
 
