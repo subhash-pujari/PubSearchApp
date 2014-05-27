@@ -7,7 +7,7 @@ import MySQLdb
 class DatabaseHandler:
 	
 	def __init__(self):
-		self.db = MySQLdb.connect('localhost', 'tiger', 'user@123', 'acda_bfs')
+		self.db = MySQLdb.connect('localhost', 'username', 'password', 'database_name')
 		self.cursor = self.db.cursor()
 
 	def getTitle(self, _id):
